@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Valverde - CV Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Header Section */
+        .header {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 50px 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--white);
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .header-info h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-info h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4em;
+            font-weight: 400;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+
+        .contact-item i {
+            width: 20px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+
+        /* Main Content - Two Column Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            background: linear-gradient(180deg, #f8fafc 0%, #e5e7eb 100%);
+            padding: 40px 30px;
+            border-right: 3px solid var(--secondary-color);
+        }
+
+        .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-item i {
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+
+        .skill-item strong {
+            color: var(--primary-color);
+        }
+
+        .sector-tag {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.85em;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .sector-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .language-level {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        /* Right Content Area */
+        .content {
+            padding: 40px 50px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--secondary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 5px solid var(--secondary-color);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 25px;
+        }
+
+        .highlight-box p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            border: 2px solid #dbeafe;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary-color);
+        }
+
+        .achievement-card i {
+            font-size: 2em;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .achievement-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .achievement-card p {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .experience-item {
+            background: var(--white);
+            border-left: 4px solid var(--secondary-color);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateX(5px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .experience-title h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            font-size: 1.1em;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .experience-duration {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .experience-content h4 {
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .experience-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-content li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .experience-content li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .competence-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .competence-item {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #10b981;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .competence-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .competence-item i {
+            color: #059669;
+            margin-right: 8px;
+        }
+
+        .footer {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            font-style: italic;
+        }
+
+        .footer p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .header {
+                padding: 30px 40px 25px;
+            }
+
+            .header-content {
+                grid-template-columns: 150px 1fr;
+                gap: 30px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .header-info h1 {
+                font-size: 2.2em;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr 2.5fr;
+            }
+
+            .sidebar {
+                padding: 25px 20px;
+            }
+
+            .content {
+                padding: 25px 35px;
+            }
+
+            .section {
+                margin-bottom: 25px;
+                page-break-inside: avoid;
+            }
+
+            .experience-item {
+                page-break-inside: avoid;
+            }
+
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .header-content {
+                grid-template-columns: 150px 1fr;
+                gap: 30px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .header-info h1 {
+                font-size: 2.2em;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 3px solid var(--secondary-color);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
+            }
+
+            .header-info h1 {
+                font-size: 1.8em;
+            }
+
+            .header-info h2 {
+                font-size: 1.1em;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 25px 20px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .achievement-grid,
+            .competence-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <img src="Mercedes_Foto.png" alt="Mercedes Valverde" class="profile-photo">
+                <div class="header-info">
+                    <h1>MERCEDES VIGO</h1>
+                    <h2>Asesora Comercial B2B | Especialista en Ventas de Soluciones Tecnológicas y Construcción</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+34 634368498</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>mercedesdvt_26@hotmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/mercedes-vigo/" target="_blank" style="color:white; text-decoration: none;">linkedin.com/in/mercedes-vigo</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Madrid, España</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <!-- Herramientas y Sistemas -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-tools"></i> Herramientas</h3>
+                    <div class="skill-item">
+                        <i class="fas fa-star"></i>
+                        <strong>SAP (Módulos: Puntos de Venta, Almacén, Caja)</strong><br>
+                        <span style="font-size: 0.9em; color: #6b7280;">11 años de experiencia</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-line"></i>
+                        <strong>ERP/CRM</strong><br>
+                        <span style="font-size: 0.9em; color: #6b7280;">Gestión de pipeline, reporting</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-laptop"></i>
+                        <strong>Microsoft Office</strong><br>
+                        <span style="font-size: 0.9em; color: #6b7280;">Nivel avanzado</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <strong>Facturación electrónica</strong>
+                    </div>
+                </div>
+
+                <!-- Idiomas -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-language"></i> Idiomas</h3>
+                    <div class="language-item">
+                        <span><strong>Español</strong></span>
+                        <span class="language-level">C2 Nativo</span>
+                    </div>
+                    <div class="language-item">
+                        <span><strong>Inglés</strong></span>
+                        <span class="language-level">B1-B2</span>
+                    </div>
+                </div>
+
+                <!-- Sectores -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-industry"></i> Sectores</h3>
+                    <div style="margin-top: 15px;">
+                        <span class="sector-tag"><i class="fas fa-microchip"></i> Tecnología</span>
+                        <span class="sector-tag"><i class="fas fa-building"></i> Construcción</span>
+                        <span class="sector-tag"><i class="fas fa-store"></i> Retail B2B/B2C</span>
+                        <span class="sector-tag"><i class="fas fa-briefcase"></i> Servicios</span>
+                        <span class="sector-tag"><i class="fas fa-truck"></i> Logística</span>
+                    </div>
+                </div>
+
+                <!-- Formación -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Formación</h3>
+                    <div class="skill-item">
+                        <i class="fas fa-university"></i>
+                        <strong>Licenciatura en Contabilidad</strong><br>
+                        <span style="font-size: 0.9em; color: #6b7280;">(Finalizada)</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-certificate"></i>
+                        <strong>Gestión Comercial y Ventas</strong>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-cogs"></i>
+                        <strong>SAP - Módulos Comerciales</strong>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-user-friends"></i>
+                        <strong>Atención al Cliente</strong>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-certificate"></i>
+                        <strong>Certificado Profesionalidad (HOTG0208)</strong><br>
+                        <span style="font-size: 0.9em; color: #6b7280;">Gestión de llamadas de teleasistencia</span>
+                    </div>
+                </div>
+
+                <!-- Certificaciones en Curso -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-clock"></i> En Curso</h3>
+                    <div style="font-size: 0.9em; color: #4b5563; line-height: 1.8;">
+                        <p><i class="fas fa-check-circle" style="color: #10b981;"></i> CRM modernos (HubSpot/Salesforce)</p>
+                        <p><i class="fas fa-check-circle" style="color: #10b981;"></i> Inglés Comercial B2</p>
+                        <p><i class="fas fa-check-circle" style="color: #10b981;"></i> Certificado Profesionalidad (ADGG0408)</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Content -->
+            <main class="content">
+                <!-- Perfil Profesional -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-user-tie"></i> Perfil Profesional</h2>
+                    <div class="highlight-box">
+                        <p>Asesora Comercial con <strong>+20 años de experiencia</strong> en ventas B2B y B2C, especializada en la gestión integral del ciclo comercial desde prospección hasta postventa. Perfil híbrido comercial-administrativo con <strong>dominio avanzado de SAP (módulos de Puntos de Venta, Almacén y Caja)</strong> durante 11 años. Experta en venta consultiva de productos técnicos para acabados de construcción y soluciones tecnológicas (ERP/software). Destacada por su capacidad para gestionar carteras de clientes, optimizar procesos y formar equipos comerciales.</p>
+                    </div>
+                </section>
+
+                <!-- Logros Destacados -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-trophy"></i> Logros Destacados</h2>
+                    <div class="achievement-grid">
+                        <div class="achievement-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Gestión de Cartera</h4>
+                            <p>Gestión y fidelización de carteras de clientes B2B y B2C, incluyendo constructoras y distribuidores, con enfoque en relaciones a largo plazo.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Optimización de Procesos</h4>
+                            <p>Implementación de mejoras en procesos comerciales y administrativos, incluyendo facturación y gestión de pedidos.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <h4>Formación y Asesoramiento</h4>
+                            <p>Diseño e impartición de programas de capacitación técnica y comercial para clientes y equipos internos.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-medal"></i>
+                            <h4>Estabilidad y Compromiso</h4>
+                            <p>Trayectoria de 11 años en Centro Cerámico, demostrando compromiso, crecimiento y dominio del sector.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experiencia Profesional -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+
+                    <!-- Inforgest -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>ASESORA COMERCIAL</h3>
+                                <p class="experience-company">Inforgest E.I.R.L. (Sector Tecnología)</p>
+                            </div>
+                            <span class="experience-duration">Mar 2019 - Mar 2022 (3 años)</span>
+                        </div>
+                        <p class="experience-description">Venta de soluciones ERP y software de gestión empresarial a clientes corporativos y PYMES.</p>
+
+                        <div class="experience-content">
+                            <h4>Responsabilidades clave:</h4>
+                            <ul>
+                                <li>Gestión integral del ciclo de ventas de soluciones tecnológicas (prospección, asesoramiento, cierre, implementación).</li>
+                                <li>Venta consultiva de sistemas ERP mediante asesoramiento telefónico y presencial.</li>
+                                <li>Identificación de necesidades empresariales y propuesta de soluciones personalizadas.</li>
+                                <li>Seguimiento de pipeline comercial en CRM.</li>
+                            </ul>
+
+                            <h4>Logros:</h4>
+                            <ul>
+                                <li>Gestión efectiva de cartera de clientes activos (mix corporativo-PYME).</li>
+                                <li>Implementación de estrategias de venta consultiva que mejoraron la tasa de conversión.</li>
+                                <li>Optimización del ciclo de cierre mediante seguimiento sistematizado en CRM.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Centro Cerámico -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>ASESORA COMERCIAL / ENCARGADA DE TIENDA</h3>
+                                <p class="experience-company">Centro Cerámico Las Flores S.A.C. (Retail/Construcción)</p>
+                            </div>
+                            <span class="experience-duration">Abr 2008 - Feb 2019 (11 años)</span>
+                        </div>
+                        <p class="experience-description">Venta de materiales cerámicos y acabados para construcción a constructoras, instaladores y clientes finales.</p>
+
+                        <div class="experience-content">
+                            <h4>Responsabilidades clave:</h4>
+                            <ul>
+                                <li>Gestión de cartera mixta: clientes corporativos (constructoras) y particulares (B2B y B2C).</li>
+                                <li>Venta técnica especializada de productos de construcción y acabados.</li>
+                                <li>Diseño e impartición de talleres de capacitación técnica para clientes y equipos.</li>
+                                <li>Seguimiento integral de proyectos de construcción desde presupuesto hasta entrega.</li>
+                                <li>Gestión operativa completa en SAP (módulos de Puntos de Venta, Almacén y Caja).</li>
+                                <li>Supervisión y formación de equipo de ventas (hasta 3 personas).</li>
+                            </ul>
+
+                            <h4>Logros:</h4>
+                            <ul>
+                                <li>Gestión y fidelización de una amplia cartera de clientes recurrentes (constructoras y distribuidores).</li>
+                                <li>Mantenimiento de una trayectoria de 11 años, demostrando compromiso y dominio del sector.</li>
+                                <li>Optimización de procesos internos, incluyendo facturación y gestión de pedidos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Transportes Odín -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>ASESORA COMERCIAL</h3>
+                                <p class="experience-company">Empresa de Transportes Odín EIRL (Transporte y Logística)</p>
+                            </div>
+                            <span class="experience-duration">Feb 2001 - Abr 2008 (7 años)</span>
+                        </div>
+                        <p class="experience-description">Venta de servicios de transporte de carga y pasajeros a clientes corporativos.</p>
+
+                        <div class="experience-content">
+                            <h4>Responsabilidades y logros:</h4>
+                            <ul>
+                                <li>Prospección y venta de servicios de transporte B2B.</li>
+                                <li>Desarrollo y gestión de cartera de clientes corporativos estables.</li>
+                                <li>Coordinación de operaciones logísticas y elaboración de propuestas comerciales.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Competencias Comerciales -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-star"></i> Competencias Comerciales</h2>
+
+                    <h4 style="color: var(--primary-color); margin-top: 20px; margin-bottom: 15px; font-family: 'Poppins', sans-serif;">
+                        <i class="fas fa-handshake"></i> Técnicas de Venta
+                    </h4>
+                    <div class="competence-grid">
+                        <div class="competence-item">
+                            <i class="fas fa-chart-line"></i>
+                            <strong>Venta Consultiva:</strong> Soluciones ERP/Software, análisis de necesidades
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-tools"></i>
+                            <strong>Venta Técnica:</strong> Productos especializados, conocimiento sectorial
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-building"></i>
+                            <strong>Venta Relacional B2B:</strong> Key Account Management, carteras de largo plazo
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-store"></i>
+                            <strong>Venta Transaccional B2C:</strong> Retail, punto de venta, cierre rápido
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-phone"></i>
+                            <strong>Inside Sales:</strong> Venta telefónica, telesales, prospección digital
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-comments"></i>
+                            <strong>Negociación comercial:</strong> Manejo de objeciones, cierre multinivel
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-search"></i>
+                            <strong>Prospección activa:</strong> Cold calling, networking, eventos
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-heart"></i>
+                            <strong>Postventa:</strong> Customer Success, fidelización
+                        </div>
+                    </div>
+
+                    <h4 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 15px; font-family: 'Poppins', sans-serif;">
+                        <i class="fas fa-plus-circle"></i> Competencias Adicionales
+                    </h4>
+                    <div class="competence-grid">
+                        <div class="competence-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <strong>Reporting y análisis:</strong> KPIs, dashboards, informes
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <strong>Formación:</strong> Diseño e impartición de programas
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-euro-sign"></i>
+                            <strong>Gestión financiera:</strong> Tesorería, caja, cobranza
+                        </div>
+                        <div class="competence-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <strong>Gestión de proyectos:</strong> Ciclos de venta largos
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Propuesta de Valor -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-lightbulb"></i> Propuesta de Valor</h2>
+                    <div class="achievement-grid">
+                        <div class="achievement-card">
+                            <i class="fas fa-user-check"></i>
+                            <h4>Perfil Híbrido Único</h4>
+                            <p>Combino habilidades comerciales con sólida gestión administrativa-financiera, garantizando autonomía operativa completa.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Dominio SAP Específico</h4>
+                            <p>11 años de experiencia en SAP (módulos de Puntos de Venta, Almacén y Caja), ideal para empresas con procesos maduros.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-target"></i>
+                            <h4>Gestión de Cartera</h4>
+                            <p>Capacidad probada para desarrollar y fidelizar carteras de clientes B2B y B2C a largo plazo.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-random"></i>
+                            <h4>Versatilidad Multi-sectorial</h4>
+                            <p>Adaptabilidad demostrada en tecnología, construcción, logística y retail.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Posiciones Objetivo -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-bullseye"></i> Posiciones Objetivo</h2>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px;">
+                        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                            <i class="fas fa-check-circle" style="color: #d97706;"></i> Asesora Comercial / Delegada Comercial
+                        </div>
+                        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                            <i class="fas fa-check-circle" style="color: #d97706;"></i> Key Account Manager
+                        </div>
+                        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                            <i class="fas fa-check-circle" style="color: #d97706;"></i> Business Development Representative
+                        </div>
+                        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                            <i class="fas fa-check-circle" style="color: #d97706;"></i> Inside Sales Representative
+                        </div>
+                        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                            <i class="fas fa-check-circle" style="color: #d97706;"></i> Consultora de Soluciones Tecnológicas
+                        </div>
+                        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                            <i class="fas fa-check-circle" style="color: #d97706;"></i> Customer Success Manager
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><i class="fas fa-quote-left"></i> Mi objetivo es aportar mi experiencia comercial integral para ayudar a empresas del sector de acabados de construcción, tecnología o servicios B2B a alcanzar y superar sus objetivos de ventas, combinando habilidades consultivas, dominio técnico de producto y gestión relacional de largo plazo. <i class="fas fa-quote-right"></i></p>
+        </footer>
+    </div>
+</body>
+</html>
