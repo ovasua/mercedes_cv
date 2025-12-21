@@ -546,6 +546,51 @@
                 gap: 10px;
             }
         }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+                margin: 0;
+            }
+
+            .header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .sidebar {
+                background: #f8fafc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .experience-item {
+                page-break-inside: avoid;
+            }
+
+            .achievement-card {
+                page-break-inside: avoid;
+            }
+
+            .section {
+                page-break-inside: auto;
+            }
+
+            .footer {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
     </style>
 </head>
 
