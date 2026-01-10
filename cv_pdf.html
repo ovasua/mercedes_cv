@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Vigo - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a5f;
+            --accent: #e67e22;
+            --text: #2c3e50;
+            --text-light: #5d6d7e;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.35;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            margin: 0 auto;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 68mm 1fr;
+            overflow: hidden;
+        }
+
+        /* ========== SIDEBAR ========== */
+        .sidebar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 15mm 5mm 10mm 5mm;
+        }
+
+        .photo-container {
+            text-align: center;
+            margin-bottom: 5mm;
+        }
+
+        .photo {
+            width: 35mm;
+            height: 35mm;
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 16pt;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1mm;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 8pt;
+            text-align: center;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-bottom: 5mm;
+            line-height: 1.3;
+        }
+
+        .sidebar-section {
+            margin-bottom: 4mm;
+        }
+
+        .sidebar-title {
+            font-size: 8pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 1.5mm;
+            margin-bottom: 2mm;
+            color: var(--accent);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            font-size: 8pt;
+            margin-bottom: 1.5mm;
+        }
+
+        .contact-item i {
+            width: 4mm;
+            text-align: center;
+            color: var(--accent);
+            font-size: 8pt;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1mm 2mm;
+            border-radius: 2px;
+            font-size: 7.5pt;
+            margin: 0.5mm;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 8pt;
+            margin-bottom: 1mm;
+        }
+
+        .lang-level {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ========== MAIN CONTENT ========== */
+        .main {
+            padding: 12mm 8mm 8mm 8mm;
+        }
+
+        .section {
+            margin-bottom: 4mm;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1mm;
+            margin-bottom: 2.5mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 9pt;
+        }
+
+        /* Profile */
+        .profile-text {
+            font-size: 9pt;
+            line-height: 1.4;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        .profile-text strong {
+            color: var(--primary);
+        }
+
+        /* Experience */
+        .exp-item {
+            margin-bottom: 3mm;
+            padding-left: 3mm;
+            border-left: 2px solid var(--bg-light);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5mm;
+        }
+
+        .exp-title {
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--primary);
+        }
+
+        .exp-duration {
+            font-size: 7.5pt;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .exp-company {
+            font-size: 8pt;
+            color: var(--text-light);
+            margin-bottom: 1mm;
+        }
+
+        .exp-bullets {
+            font-size: 8pt;
+            padding-left: 3mm;
+            color: var(--text);
+        }
+
+        .exp-bullets li {
+            margin-bottom: 0.5mm;
+            list-style-type: none;
+            position: relative;
+        }
+
+        .exp-bullets li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: -2.5mm;
+        }
+
+        /* Achievements Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2mm;
+        }
+
+        .achievement-item {
+            background: var(--bg-light);
+            padding: 2mm;
+            border-radius: 2px;
+            border-left: 2px solid var(--accent);
+        }
+
+        .achievement-item strong {
+            font-size: 8pt;
+            color: var(--primary);
+            display: block;
+        }
+
+        .achievement-item span {
+            font-size: 7.5pt;
+            color: var(--text-light);
+        }
+
+        /* Competencies */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5mm 4mm;
+        }
+
+        .comp-item {
+            font-size: 8pt;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .comp-item i {
+            color: var(--accent);
+            font-size: 7pt;
+            width: 3mm;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .page {
+                width: 100%;
+                height: 100vh;
+            }
+
+            .sidebar {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="photo-container">
+                <img src="Mercedes_Foto.png" alt="Mercedes Vigo" class="photo">
+            </div>
+            <h1 class="name">MERCEDES VIGO</h1>
+            <p class="title">Profesional de Ventas Retail<br>21 Años de Experiencia</p>
+
+            <!-- Contacto -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contacto</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+34 634 368 498</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>mercedesdvt_26@hotmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Madrid, España</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/mercedes-vigo</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <span>ovasua.github.io/mercedes_cv</span>
+                </div>
+            </div>
+
+            <!-- Herramientas -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Herramientas</h3>
+                <span class="skill-tag">SAP (11 años)</span>
+                <span class="skill-tag">TPV</span>
+                <span class="skill-tag">CRM</span>
+                <span class="skill-tag">MS Office</span>
+                <span class="skill-tag">Facturación</span>
+                <span class="skill-tag">Inventarios</span>
+            </div>
+
+            <!-- Idiomas -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Idiomas</h3>
+                <div class="lang-item">
+                    <span>Español</span>
+                    <span class="lang-level">Nativo</span>
+                </div>
+                <div class="lang-item">
+                    <span>Inglés</span>
+                    <span class="lang-level">A2</span>
+                </div>
+            </div>
+
+            <!-- Formación -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Formación</h3>
+                <div style="font-size: 7.5pt; margin-bottom: 1.5mm;">
+                    <strong>Licenciatura en Contabilidad</strong><br>
+                    <span style="opacity: 0.8;">Titulación Universitaria</span>
+                </div>
+                <div style="font-size: 7.5pt; margin-bottom: 1.5mm;">
+                    <strong>Cert. Profesionalidad HOTG0208</strong><br>
+                    <span style="opacity: 0.8;">Venta Productos y Servicios Turísticos</span>
+                </div>
+                <div style="font-size: 7.5pt; margin-bottom: 1.5mm;">
+                    <strong>Cert. Prof. ADGG0408</strong><br>
+                    <span style="opacity: 0.8;">Op. Aux. Servicios Admin. y Generales</span>
+                </div>
+                <div style="font-size: 7.5pt;">
+                    <strong>SAP - Módulos Comerciales</strong><br>
+                    <span style="opacity: 0.8;">POS, Almacén, Caja (15 años)</span>
+                </div>
+            </div>
+
+            <!-- Disponibilidad -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Disponibilidad</h3>
+                <div style="font-size: 8pt;">
+                    <i class="fas fa-check" style="color: var(--accent);"></i> Incorporación inmediata<br>
+                    <i class="fas fa-check" style="color: var(--accent);"></i> Flexibilidad horaria<br>
+                    <i class="fas fa-check" style="color: var(--accent);"></i> Comunidad de Madrid
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <!-- Perfil -->
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-user"></i> Perfil Profesional</h2>
+                <p class="profile-text">
+                    <strong>Profesional de ventas</strong> con más de <strong>21 años de experiencia</strong> en retail
+                    y venta B2B/B2C. Especializada en atención personalizada, gestión integral de punto de venta
+                    y fidelización de clientes. Dominio avanzado de <strong>TPV/SAP</strong>, control de stock,
+                    arqueo de caja y KPIs comerciales. Trayectoria de crecimiento de vendedora a encargada de tienda.
+                </p>
+            </section>
+
+            <!-- Experiencia -->
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Asesora Comercial</span>
+                        <span class="exp-duration">2019 - 2022 · 3 años</span>
+                    </div>
+                    <p class="exp-company">Empresa de Tecnología · Venta de Software ERP</p>
+                    <ul class="exp-bullets">
+                        <li>Venta consultiva de soluciones tecnológicas a empresas</li>
+                        <li>Gestión de pipeline comercial en CRM</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Vendedora Especialista / Encargada de Tienda</span>
+                        <span class="exp-duration">2008 - 2019 · 11 años</span>
+                    </div>
+                    <p class="exp-company">Retail Especializado · Sector Hogar y Decoración</p>
+                    <ul class="exp-bullets">
+                        <li>Atención personalizada a clientes B2B y B2C</li>
+                        <li>Gestión integral en SAP: punto de venta, stock, caja, facturación</li>
+                        <li>Supervisión y formación de equipo (3 personas)</li>
+                        <li>Fidelización de cartera con renovación recurrente</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Asesora Comercial B2B</span>
+                        <span class="exp-duration">2001 - 2008 · 7 años</span>
+                    </div>
+                    <p class="exp-company">Sector Transporte y Logística</p>
+                    <ul class="exp-bullets">
+                        <li>Desarrollo y gestión de cartera de clientes corporativos</li>
+                        <li>Elaboración de propuestas comerciales</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Logros -->
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-trophy"></i> Logros Destacados</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <strong>21 Años en Ventas</strong>
+                        <span>De vendedora a encargada</span>
+                    </div>
+                    <div class="achievement-item">
+                        <strong>Cartera Fidelizada</strong>
+                        <span>Clientes B2B/B2C recurrentes</span>
+                    </div>
+                    <div class="achievement-item">
+                        <strong>Dominio TPV/SAP</strong>
+                        <span>Gestión autónoma de tienda</span>
+                    </div>
+                    <div class="achievement-item">
+                        <strong>Excelencia en Servicio</strong>
+                        <span>Orientación total al cliente</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Competencias -->
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-star"></i> Competencias Clave</h2>
+                <div class="comp-grid">
+                    <div class="comp-item"><i class="fas fa-check"></i> Atención personalizada</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Venta consultiva B2B/B2C</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Arqueo de caja</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Control de stock</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Visual merchandising</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Fidelización de clientes</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Trabajo en equipo</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Orientación a resultados</div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
