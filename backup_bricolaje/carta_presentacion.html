@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Presentación - Mercedes Vigo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #f3f4f6;
+            padding: 40px;
+        }
+
+        .page {
+            background: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative header bar */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+
+        .contact-info h1 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 2.2em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .date-location {
+            text-align: right;
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .recipient {
+            margin-bottom: 40px;
+        }
+
+        .recipient p {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .subject {
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .content {
+            text-align: justify;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+            list-style-type: none;
+            position: relative;
+        }
+
+        .content li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .closing {
+            margin-top: 40px;
+        }
+
+        .signature {
+            margin-top: 50px;
+        }
+
+        .signature-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 40px;
+            }
+
+            .page::before {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <div class="contact-info">
+                <h1>MERCEDES VIGO</h1>
+                <p>Madrid, España | +34 634 368 498</p>
+                <p>mercedesdvt_26@hotmail.com</p>
+            </div>
+            <div class="date-location">
+                <p>Madrid, 21 de diciembre de 2024</p>
+            </div>
+        </header>
+
+        <div class="recipient">
+            <p>A la atención del Responsable de Selección,</p>
+            <p>Departamento de Recursos Humanos</p>
+        </div>
+
+        <div class="subject">
+            Asunto: Candidatura para la posición de Asesora de Proyectos / Especialista Showroom
+        </div>
+
+        <div class="content">
+            <p>Estimados,</p>
+
+            <p>Tengo el gusto de dirigirme a ustedes con el fin de presentar mi candidatura para integrarme en su equipo
+                profesional. Con una sólida trayectoria de más de <b>11 años en el sector de acabados, cerámica y
+                    materiales de construcción</b>, cuento con la veteranía técnica y la visión comercial necesaria para
+                aportar valor inmediato a su firma.</p>
+
+            <p>A lo largo de mi experiencia en entornos de alta especialización, he consolidado un perfil híbrido que
+                combina la venta técnica consultiva con una gestión operativa impecable. Mi valor diferencial se basa en
+                tres pilares fundamentales:</p>
+
+            <ul>
+                <li><b>Expertise Técnico:</b> Profundo conocimiento en cerámica, porcelácnicos, pavimentos y sanitarios,
+                    permitiéndome asesorar con seguridad en especificaciones, resistencias y soluciones de instalación.
+                </li>
+                <li><b>Gestión con SAP:</b> 11 años de dominio avanzado en el sistema SAP (módulos de Almacén, Venta y
+                    Caja), lo que me permite gestionar todo el ciclo comercial con máxima eficiencia y autonomía.</li>
+                <li><b>Visión Estética:</b> Gran pasión por el diseño de interiores y la arquitectura, facilitando al
+                    cliente particular y al profesional (reformistas e instaladores) soluciones que armonizan técnica y
+                    estética.</li>
+            </ul>
+
+            <p>Me considero una profesional con una fuerte vocación de servicio, acostumbrada a trabajar por objetivos y
+                orientada a la fidelización a través de la excelencia en el trato. Actualmente radicada en Madrid,
+                cuento con <b>incorporación inmediata</b> y absoluta disponibilidad para adaptarme a las necesidades de
+                su centro.</p>
+
+            <p>Agradezco de antemano el tiempo dedicado a revisar mi perfil y quedo a su entera disposición para
+                concertar una entrevista personal.</p>
+        </div>
+
+        <div class="closing">
+            <p>Atentamente,</p>
+            <div class="signature">
+                <p class="signature-name">Mercedes Vigo Tuesta</p>
+                <p>Vendedora Especialista en Acabados</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
