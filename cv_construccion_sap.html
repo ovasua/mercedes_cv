@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes Vigo - CV Construcción y Reformas | SAP Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a2a;
+            /* Deep construction green — sector identity */
+            --accent: #c8860a;
+            /* Warm amber — premium & technical feel */
+            --accent2: #e8a020;
+            --text: #1e2d28;
+            --text-light: #556b5e;
+            --bg-light: #f5f7f5;
+            --bg-accent: #fdf8ef;
+            --white: #ffffff;
+            --border: #dce8e0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9pt;
+            line-height: 1.38;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            margin: 0 auto;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 65mm 1fr;
+            overflow: hidden;
+        }
+
+        /* ========== SIDEBAR ========== */
+        .sidebar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12mm 5mm 8mm 5mm;
+            display: flex;
+            flex-direction: column;
+            gap: 3.5mm;
+        }
+
+        .photo-container {
+            text-align: center;
+            margin-bottom: 2mm;
+        }
+
+        .photo {
+            width: 32mm;
+            height: 32mm;
+            border-radius: 50%;
+            border: 2.5px solid var(--accent2);
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 14pt;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5mm;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .job-title {
+            font-size: 7.5pt;
+            text-align: center;
+            font-weight: 500;
+            color: var(--accent2);
+            line-height: 1.4;
+            margin-bottom: 1mm;
+        }
+
+        .sub-sector {
+            font-size: 7pt;
+            text-align: center;
+            opacity: 0.75;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 3mm;
+        }
+
+        .sidebar-section {
+            /* sections are spaced by the gap on flex parent */
+        }
+
+        .sidebar-title {
+            font-size: 7pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid rgba(200, 134, 10, 0.5);
+            padding-bottom: 1mm;
+            margin-bottom: 2mm;
+            color: var(--accent2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2mm;
+            font-size: 7.5pt;
+            margin-bottom: 1.5mm;
+            line-height: 1.3;
+        }
+
+        .contact-item i {
+            width: 4mm;
+            text-align: center;
+            color: var(--accent2);
+            font-size: 7.5pt;
+            margin-top: 0.5mm;
+            flex-shrink: 0;
+        }
+
+        /* ATS Keywords block */
+        .ats-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(200, 134, 10, 0.35);
+            padding: 0.8mm 2mm;
+            border-radius: 2px;
+            font-size: 7pt;
+            margin: 0.4mm;
+            line-height: 1.3;
+        }
+
+        /* Formation */
+        .edu-item {
+            margin-bottom: 2mm;
+        }
+
+        .edu-title {
+            font-size: 7.5pt;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .edu-sub {
+            font-size: 7pt;
+            opacity: 0.75;
+            line-height: 1.3;
+        }
+
+        .edu-badge {
+            display: inline-block;
+            background: rgba(200, 134, 10, 0.25);
+            color: var(--accent2);
+            font-size: 6.5pt;
+            font-weight: 700;
+            padding: 0.3mm 1.5mm;
+            border-radius: 2px;
+            margin-top: 0.5mm;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 7.5pt;
+            margin-bottom: 1mm;
+        }
+
+        .lang-level {
+            color: var(--accent2);
+            font-weight: 600;
+        }
+
+        /* Senior bonus block */
+        .senior-box {
+            background: rgba(200, 134, 10, 0.15);
+            border: 1px solid rgba(200, 134, 10, 0.4);
+            border-radius: 3px;
+            padding: 2mm;
+            font-size: 7pt;
+            line-height: 1.4;
+        }
+
+        .senior-box strong {
+            color: var(--accent2);
+            font-size: 7.5pt;
+        }
+
+        .avail-item {
+            font-size: 7.5pt;
+            margin-bottom: 1mm;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .avail-item i {
+            color: var(--accent2);
+            font-size: 7pt;
+        }
+
+        /* ========== MAIN ========== */
+        .main {
+            padding: 10mm 8mm 6mm 7mm;
+            display: flex;
+            flex-direction: column;
+            gap: 3.5mm;
+        }
+
+        .section-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 1.5px solid var(--accent);
+            padding-bottom: 1mm;
+            margin-bottom: 2.5mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 8pt;
+        }
+
+        /* Profile */
+        .profile-text {
+            font-size: 8.5pt;
+            line-height: 1.5;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        .profile-text strong {
+            color: var(--primary);
+        }
+
+        /* KPI strip */
+        .kpi-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2mm;
+            background: var(--bg-accent);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 2.5mm;
+        }
+
+        .kpi-item {
+            text-align: center;
+        }
+
+        .kpi-value {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            line-height: 1.1;
+        }
+
+        .kpi-label {
+            font-size: 6.5pt;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        /* Experience */
+        .exp-item {
+            margin-bottom: 3mm;
+            padding-left: 3mm;
+            border-left: 2px solid var(--border);
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5mm;
+            gap: 3mm;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 8.5pt;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .exp-duration {
+            font-size: 7pt;
+            color: var(--accent);
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .exp-company {
+            font-size: 7.5pt;
+            color: var(--text-light);
+            margin-bottom: 1.2mm;
+            font-style: italic;
+        }
+
+        .exp-bullets {
+            font-size: 7.8pt;
+            padding-left: 3.5mm;
+            color: var(--text);
+        }
+
+        .exp-bullets li {
+            margin-bottom: 0.6mm;
+            list-style-type: none;
+            position: relative;
+            line-height: 1.35;
+        }
+
+        .exp-bullets li::before {
+            content: "▸";
+            color: var(--accent);
+            position: absolute;
+            left: -3mm;
+            font-size: 7pt;
+        }
+
+        .exp-bullets li strong {
+            color: var(--primary);
+        }
+
+        /* Achievements Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2mm;
+        }
+
+        .achievement-item {
+            background: var(--bg-light);
+            padding: 2mm 2.5mm;
+            border-radius: 2px;
+            border-left: 2.5px solid var(--accent);
+        }
+
+        .achievement-item strong {
+            font-size: 8pt;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.3mm;
+        }
+
+        .achievement-item span {
+            font-size: 7pt;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* Competencies */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2mm 4mm;
+        }
+
+        .comp-item {
+            font-size: 7.8pt;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .comp-item i {
+            color: var(--accent);
+            font-size: 6.5pt;
+            width: 3mm;
+            flex-shrink: 0;
+        }
+
+        /* Print */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .page {
+                width: 100%;
+                height: 100vh;
+            }
+
+            .sidebar {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="photo-container">
+                <img src="Mercedes_Foto.png" alt="Mercedes Vigo" class="photo">
+            </div>
+            <h1 class="name">MERCEDES VIGO</h1>
+            <p class="job-title">Customer Operations Manager<br>Sector Construcción & Reforma</p>
+            <p class="sub-sector">SAP Expert · 11 años · B2B</p>
+
+            <!-- Contacto -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contacto</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+34 634 368 498</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>mercedesdvt_26@hotmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Madrid, España</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/mercedes-vigo</span>
+                </div>
+            </div>
+
+            <!-- ATS Keywords -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Herramientas y Tecnología</h3>
+                <span class="ats-tag">SAP SD · SAP MM</span>
+                <span class="ats-tag">SAP POS / TPV</span>
+                <span class="ats-tag">Gestión de Albaranes</span>
+                <span class="ats-tag">Facturación B2B</span>
+                <span class="ats-tag">Control de Stock</span>
+                <span class="ats-tag">Microsoft Excel</span>
+                <span class="ats-tag">CRM / Salesforce</span>
+                <span class="ats-tag">Pedidos a Proveedor</span>
+            </div>
+
+            <!-- Formación -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Formación</h3>
+                <div class="edu-item">
+                    <div class="edu-title">Grado en ADE / Finanzas</div>
+                    <div class="edu-sub">Licenciatura universitaria</div>
+                    <div class="edu-badge">Homologación en trámite · Min. Universidades</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">Cert. Prof. ADGG0408</div>
+                    <div class="edu-sub">Op. Aux. Servicios Administrativos y Generales</div>
+                    <div class="edu-badge">✓ Titulación española vigente</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">Cert. Prof. HOTG0208</div>
+                    <div class="edu-sub">Venta de Productos y Servicios Turísticos</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">SAP · Módulos SD, MM, POS</div>
+                    <div class="edu-sub">Almacén, Caja, Logística · 11 años</div>
+                </div>
+            </div>
+
+            <!-- Idiomas -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Idiomas</h3>
+                <div class="lang-item">
+                    <span>Español</span>
+                    <span class="lang-level">Nativo</span>
+                </div>
+                <div class="lang-item">
+                    <span>Inglés</span>
+                    <span class="lang-level">A2</span>
+                </div>
+            </div>
+
+            <!-- Plan Sénior CAM -->
+            <div class="sidebar-section">
+                <div class="senior-box">
+                    <strong><i class="fas fa-euro-sign"></i> Incentivo Plan Sénior CAM</strong><br>
+                    Mi contratación puede acogerse a una subvención de hasta <strong>€7.500</strong> del Plan de Empleo
+                    Sénior de la Comunidad de Madrid (mayores de 45 años).
+                </div>
+            </div>
+
+            <!-- Disponibilidad -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Disponibilidad</h3>
+                <div class="avail-item"><i class="fas fa-check-circle"></i> Incorporación inmediata</div>
+                <div class="avail-item"><i class="fas fa-check-circle"></i> Jornada completa / parcial</div>
+                <div class="avail-item"><i class="fas fa-check-circle"></i> Comunidad de Madrid</div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- Perfil -->
+            <section>
+                <h2 class="section-title"><i class="fas fa-user-tie"></i> Perfil Profesional</h2>
+                <p class="profile-text">
+                    <strong>Profesional sénior con 21 años de trayectoria</strong> en operaciones comerciales y gestión
+                    administrativa en el <strong>sector construcción, cerámica y logística</strong>. Especialista en el
+                    ciclo completo de operaciones B2B: gestión de pedidos a proveedor, control de stock, facturación y
+                    atención postventa mediante <strong>SAP (11 años)</strong>. Acostumbrada a interlocutar con
+                    arquitectos, contratistas y jefes de obra; aporto autoridad técnica, fiabilidad y resolución
+                    autónoma de incidencias de alto impacto desde el primer día.
+                </p>
+            </section>
+
+            <!-- KPI Strip -->
+            <div class="kpi-strip">
+                <div class="kpi-item">
+                    <span class="kpi-value">€3M+</span>
+                    <span class="kpi-label">Facturación anual gestionada</span>
+                </div>
+                <div class="kpi-item">
+                    <span class="kpi-value">20</span>
+                    <span class="kpi-label">Puntos de venta en red SAP</span>
+                </div>
+                <div class="kpi-item">
+                    <span class="kpi-value">+2.700</span>
+                    <span class="kpi-label">Cierres de caja sin descuadres</span>
+                </div>
+                <div class="kpi-item">
+                    <span class="kpi-value">1.500</span>
+                    <span class="kpi-label">Referencias de catálogo SAP</span>
+                </div>
+            </div>
+
+            <!-- Experiencia -->
+            <section>
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Store Manager & Responsable de Operaciones SAP</span>
+                        <span class="exp-duration">2008 – 2019 · 11 años</span>
+                    </div>
+                    <p class="exp-company">Centro Cerámico Las Flores · Red de 20 Tiendas · Sector Reforma y Hogar ·
+                        Madrid</p>
+                    <ul class="exp-bullets">
+                        <li>Responsable de las operaciones completas del punto de venta con una facturación de
+                            <strong>€250.000/mes</strong>, garantizando cero descuadres en más de <strong>2.700 arqueos
+                                de caja</strong> durante 11 años consecutivos.</li>
+                        <li>Gestión vía SAP de un catálogo de <strong>1.000 a 2.000 referencias de stock</strong> y
+                            coordinación logística con <strong>más de 50 proveedores</strong> de materiales de
+                            construcción y cerámica.</li>
+                        <li>Atención y fidelización de clientes B2B y B2C del sector reformas (arquitectos, contratistas
+                            y particulares); resolución autónoma de incidencias de pedido, entrega y postventa.</li>
+                        <li>Gestión de albaranes, control de recepciones y coordinación de entregas en obra dentro de la
+                            red de 20 establecimientos.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Account Manager & Customer Success</span>
+                        <span class="exp-duration">2019 – 2022 · 3 años</span>
+                    </div>
+                    <p class="exp-company">Inforgest · Empresa de Servicios Tecnológicos · Madrid</p>
+                    <ul class="exp-bullets">
+                        <li>Gestión y mantenimiento de una cartera de <strong>100 clientes B2B</strong>, con seguimiento
+                            de contratos, renovaciones y resolución de incidencias de soporte técnico.</li>
+                        <li>Tramitación y actualización de contratos; mantenimiento de base de datos de clientes en CRM
+                            (Salesforce/equivalente).</li>
+                        <li>Soporte administrativo y comercial al equipo de ventas; elaboración de informes de cartera y
+                            seguimiento de KPIs de retención.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Ejecutiva de Cuentas y Administración Comercial</span>
+                        <span class="exp-duration">2001 – 2008 · 7 años</span>
+                    </div>
+                    <p class="exp-company">Transportes Odín · Logística y Servicios · Madrid</p>
+                    <ul class="exp-bullets">
+                        <li>Administración comercial de cartera de grandes cuentas corporativas en el sector logístico.
+                        </li>
+                        <li>Elaboración de presupuestos, gestión documental de contratos y atención
+                            telefónica/centralita.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Logros / Competencias -->
+            <section>
+                <h2 class="section-title"><i class="fas fa-star"></i> Competencias Clave</h2>
+                <div class="comp-grid">
+                    <div class="comp-item"><i class="fas fa-check"></i> Operaciones SAP (SD, MM, POS) · 11 años</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Facturación y Control de Cobros B2B</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Gestión de Stock y Catálogos (+1.500 refs.)
+                    </div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Gestión de Pedidos y Albaranes</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Atención al Cliente Técnico (Obra/Reforma)</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Coordinación Logística de Entregas</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Gestión de Incidencias y Reclamaciones</div>
+                    <div class="comp-item"><i class="fas fa-check"></i> Archivo, Documentación y CRM</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

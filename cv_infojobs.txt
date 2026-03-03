@@ -54,4 +54,45 @@ FORMACIÓN
 DISPONIBILIDAD
 - Incorporación Inmediata
 - Jornada Completa o Parcial
-- Movilidad: Comunidad de Madrid
+
+================================================================================
+CONFIGURACIÓN DE PERFIL INFOJOBS (GUÍA PARA COPIAR Y PEGAR)
+================================================================================
+
+1. FUTURO EMPLEO (Puesto Buscado):
+--------------------------------------------------------------------------------
+Título: Gestora Comercial & Retail / Atención al Cliente / Ventas
+Descripción: Profesional con 21 años de experiencia en gestión de puntos de venta, atención al cliente y venta consultiva. Especialista en operativa de tienda, SAP y fidelización. Busco aportar mi polivalencia y fiabilidad inmediata (incorporación inmediata).
+
+2. CATEGORÍAS Y SUBCATEGORÍAS (Selecciona estas):
+--------------------------------------------------------------------------------
+- Comercial y ventas > Venta al detalle
+- Comercial y ventas > Agente comercial
+- Atención al cliente > Atención al cliente
+- Administración de empresas > Recepción
+
+3. CONOCIMIENTOS (Etiquetas/Keywords):
+--------------------------------------------------------------------------------
+(Añade estas etiquetas exactas para que te encuentren los reclutadores)
+- SAP
+- Atención al cliente
+- Ventas
+- Retail
+- Visual merchandising
+- Resolución de conflictos
+- TPV
+- Caja
+- Microsoft Office
+- Fidelización de clientes
+
+4. PREFERENCIAS LABORALES:
+--------------------------------------------------------------------------------
+- Situación laboral: Desempleado
+- Disponibilidad: Incorporación inmediata
+- Tipo de contrato: Indefinido, De duración determinada, A tiempo parcial
+- Jornada laboral: Completa, Parcial - Indiferente (Destacar preferencia por 30h)
+- Salario mínimo: (Dejar en blanco o poner rango 15.000€ - 21.000€ para no filtrar oportunidades)
+
+5. CARTA DE PRESENTACIÓN (Corta para Infojobs):
+--------------------------------------------------------------------------------
+Hola, soy Mercedes. Tengo más de 20 años de experiencia comercial combinando la gestión de tienda (Retail) con la venta a empresas (B2B). Soy una "todoterreno": gestiono caja, stock con SAP, visual merchandising y cierro ventas complejas. Busco aportar mi fiabilidad y capacidad de resolución inmediata a su equipo. Disponibilidad total e inmediata.
